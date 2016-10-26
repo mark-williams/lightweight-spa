@@ -1,0 +1,17 @@
+body {
+    color: #444;
+    background-color: #fff;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+    height: 340px;
+    padding-top: 100px;
+    background: url("https://unsplash.it/1080/720/?image=319") no-repeat center/cover;
+}
+
+section {
+    padding-top: 0.8em;
+    padding-bottom: 1.2em;
+}

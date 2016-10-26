@@ -1,0 +1,21 @@
+{
+  "name": "matcss",
+  "version": "1.0.0",
+  "description": "MaterializeCss playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "keywords": [
+    "cdd",
+    "sass",
+    "material-design"
+  ],
+  "author": "Mark Williams",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.2.2",
+    "materialize-css": "^0.97.7"
+  }
+}
