@@ -12,26 +12,46 @@ var routing = function() {
     }
 
     function onHashChange(event) {
-        render(window.location.hash);   
+        render(decodeHash(window.location.hash));   
+    }
+
+    function decodeHash(hash) {
+        var parts = hash.split('/');
+        return {
+            page: parts[0],
+            section: parts[1] ? parts[1] : null
+        }
     }
     
-    function render(hash) {
-
-        var $pages = $('.page');
-        
-        if (hash.length) {
-            var $pageToShow = $pages.filter(hash);
+    function render(params) {
+        console.log('RENDER PARAMS', params);
+        var $pages = $('.page');       
+        if (params.page.length) {
+            var $pageToShow = $pages.filter(params.page);
             if ($pageToShow.length) {
                 $pages.hide(0);
-                $pageToShow.show(DEFAULTTRANSITIONTIME);
-            }
-            else {
-                $pages.first().show(DEFAULTTRANSITIONTIME);    
+                $pageToShow.show(DEFAULTTRANSITIONTIME, function() {
+                    if (params.section) {
+                        smoothlyScroll(params.section); 
+                    }
+                });
             }
         }
         else {
             // Default to first page
+            $pages.hide(0);
             $pages.first().show(DEFAULTTRANSITIONTIME);
         }
     }
+
+    function smoothlyScroll(section) {
+        var target = $('#' + section);
+        //target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+            $('html, body').animate({
+                     scrollTop: target.offset().top
+                 }, 1600);
+        }
+    }
+
 }();

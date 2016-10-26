@@ -17,13 +17,13 @@
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li><a href="#">Home</a></li>
-				<li><a href="#interesting-section">Interesting</a></li>
+				<li><a href="#main/interesting-section">Interesting</a></li>
 				<li><a href="#details">Details</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
 				<li><a href="#">Home</a></li>
-				<li><a href="#interesting-section">Interesting</a></li>
+				<li><a href="#main/interesting-section">Interesting</a></li>
 				<li><a href="#details">Details</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
@@ -31,11 +31,11 @@
 	</nav>
 
 	<main>
-		<div id="standard" class="page">
+		<div id="main" class="page">
 			<section>
 				<div class="container">
 					<h2>Materialize CSS</h2>
-					<p>Curabitur arcu erat, <a href="#detail">accumsan</a> id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas
+					<p>Curabitur arcu erat, <a href="#details">accumsan</a> id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas
 						non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing
 						elit.</p>
 					<p>Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus
@@ -56,6 +56,18 @@
 				</div>
 			</section>
 
+			<section>
+				<div class="container">
+					<h3>And More</h3>
+					<p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Praesent sapien massa, convallis a pellentesque nec, egestas
+					non nisi. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing
+					elit.</p>
+					<p>Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus
+					et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Donec
+					rutrum congue leo eget malesuada.</p>
+				</div>
+			</section>	
+			
 			<section id="interesting-section">
 				<div class="container">
 					<h3>Interesting section</h3>
@@ -101,7 +113,7 @@
 	<script>
 		$(function() {
 			routing.init();
-			$(".button-collapse").sideNav();
+			$(".button-collapse").sideNav();       
 		})
 	</script>
 </body>
