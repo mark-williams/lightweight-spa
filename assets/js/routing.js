@@ -16,12 +16,18 @@ var routing = function() {
     }
     
     function render(hash) {
-        var $pages = $('.page');
-        $pages.hide(0);
 
+        var $pages = $('.page');
+        
         if (hash.length) {
             var $pageToShow = $pages.filter(hash);
-            $pageToShow.show(DEFAULTTRANSITIONTIME);
+            if ($pageToShow.length) {
+                $pages.hide(0);
+                $pageToShow.show(DEFAULTTRANSITIONTIME);
+            }
+            else {
+                $pages.first().show(DEFAULTTRANSITIONTIME);    
+            }
         }
         else {
             // Default to first page
