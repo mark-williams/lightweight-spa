@@ -29,18 +29,21 @@ var routing = function() {
         if (params.page.length) {
             var $pageToShow = $pages.filter(params.page);
             if ($pageToShow.length) {
-                $pages.hide(0);
-                $pageToShow.show(DEFAULTTRANSITIONTIME, function() {
-                    if (params.section) {
-                        smoothlyScroll(params.section); 
-                    }
+            
+                $pages.not('params.page').hide(DEFAULTTRANSITIONTIME, function() {
+                    $pageToShow.show(DEFAULTTRANSITIONTIME, function() {
+                        if (params.section) {
+                            smoothlyScroll(params.section); 
+                        }
+                    });
                 });
             }
         }
         else {
             // Default to first page
-            $pages.hide(0);
-            $pages.first().show(DEFAULTTRANSITIONTIME);
+            $pages.hide(0, function() {
+                $pages.first().show(DEFAULTTRANSITIONTIME);
+            });
         }
     }
 
@@ -50,8 +53,7 @@ var routing = function() {
         if (target.length) {
             $('html, body').animate({
                      scrollTop: target.offset().top
-                 }, 1600);
+                 }, 1000);
         }
     }
-
 }();
